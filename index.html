@@ -88,6 +88,10 @@
         document.getElementById("date").innerHTML = dateStr[0] + ", " + dateStr[1] + " " + dateStr[2] + ", " + dateStr[3];
     }
 
+    function scrollToBottom(){
+        window.scrollTo(0, document.querySelector("body").scrollHeight);
+    }
+
     function addUserChat(val){
       var container = document.querySelector(".chat-container");
       var user = document.createElement("div");
@@ -314,6 +318,8 @@
 
       var container = document.querySelector(".chat-container");
       container.appendChild(chatSet);
+
+      scrollToBottom();
 
     }
   </script>
