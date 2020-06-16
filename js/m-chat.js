@@ -215,13 +215,13 @@ function addChatReply(content){
   chatSet.classList.add("row", "chat-set");
 
   var logoArea = document.createElement("div");
-  logoArea.classList.add("col-3");
+  logoArea.classList.add("col-2");
 
   logoArea.appendChild(makeLogo());
   chatSet.appendChild(logoArea);
 
   var chatArea = document.createElement("div");
-  chatArea.classList.add("col-9");
+  chatArea.classList.add("col-10");
   var userNameRow = createSingleRow();
   var userName = document.createElement("p");
   userName.classList.add("brand-name");
