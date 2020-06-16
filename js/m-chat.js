@@ -191,7 +191,7 @@ function addTimestamp(alignment){
     var chatTimestamp = document.createElement("div");
     chatTimestamp.classList.add("chat-timestamp", alignment);
     var timeStr;
-    timeStr = (time.getHours() > 12 ? time.getHours()-12 : time.getHours()) + ":" + time.getMinutes() + (time.getHours() > 12 ? " PM" : " AM");
+    timeStr = (time.getHours() > 12 ? time.getHours()-12 : time.getHours()) + ":" + (time.getMinutes() < 10 ? "0"+time.getMinutes() : time.getMinutes()) + (time.getHours() > 12 ? " PM" : " AM");
     chatTimestamp.innerHTML = timeStr;
 
     return chatTimestamp;
