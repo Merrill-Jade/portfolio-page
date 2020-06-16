@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Merrill Jade Kim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+  <!-- bootstrap stylesheet link -->
+  <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity = "sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin = "anonymous">
+
+
+  <!-- bootstrap core css -->
+  <link href="./css/bootstrap.css" rel="stylesheet">
+
+  <link rel = "stylesheet" href = "./css/logo.css">
+  <link rel = "stylesheet" href = "./css/m-chat.css">
+
+  <style>
+  </style>
+</head>
+<body onload = "updateDate();">
+  <div class="chat-container">
+    <div class = "row justify-content-center">
+      <div class = "col" style = "padding: 1rem;">
+        <div id = "date"></div>
+      </div>
+    </div>
+      <div class = "row chat-set">
+        <div class = "col-3">
+          <div class = "logo">
+            <div class = "left-eyebrow line"></div>
+            <div class = "right-eyebrow line"></div>
+            <div class = "left-eye circle"></div>
+            <div class = "right-eye circle"></div>
+            <div class = "left-cheek circle"></div>
+            <div class = "right-cheek circle"></div>
+            <div class="beak circle">
+                <div class="mouth"></div>
+            </div>
+          </div>
+        </div>
+        <div class = "col-9">
+          <div class = "row">
+            <div class = "col">
+              <p class = "brand-name">Merrill Jade Kim</p>
+            </div>
+          </div>
+          <div class = "row">
+            <div class = "col">
+              <div class = "chat-content chat-content-left">
+                Hi! Thank you for coming!
+              </div>
+              <div class = "chat-timestamp left">
+                11:12 PM
+              </div>
+            </div>
+          </div>
+          <div class = "row">
+            <div class = "col">
+              <div class = "chat-content chat-content-left row">
+                <div class = "col-md-3" style = "padding: 0;">What do you want to know?</div>
+                <div class = "col-md-3" style = "padding: 0;"><button type = "button" class = "btn btn-light" onclick = "addUserChat(this); addChatReply(addPublicationList()); addChatReply(addDefaultMenu());">Publications</button></div>
+                <div class = "col-md-3" style = "padding: 0;"><button type = "button" class = "btn btn-light" onclick = "addProjectList();">Projects</button></div>
+                <div class = "col-md-3" style = "padding: 0;"><button type = "button" class = "btn btn-light" onclick = "addContact();">Contact</button></div>
+              </div>
+              <div class = "chat-timestamp left">
+                  11:13 PM
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!--    <button type = "button" onmouseover = "frownEmotion();" onmouseout="normalEmotion();">test</button> -->
+  </div>
+  <!-- bootstrap scripts--->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+  <script src = "./js/bootstrap.js"></script>
+  <script src = "./js/logo.js"></script>
+  <script>
+    function updateDate(){
+        console.log("update function called");
+        var today = new Date();
+        var dateStr = today.toDateString().split(" ");
+
+        document.getElementById("date").innerHTML = dateStr[0] + ", " + dateStr[1] + " " + dateStr[2] + ", " + dateStr[3];
+    }
+
+    function addUserChat(val){
+      var container = document.querySelector(".chat-container");
+      var user = document.createElement("div");
+      var wrapRow = document.createElement("div");
+      var wrapCol = document.createElement("div");
+      var chatContent = document.createElement("div");
+      var chatTimestamp = addTimestamp("right");
+      wrapRow.classList.add("row", "justify-content-end", "chat-set");
+      wrapCol.classList.add("col-9");
+      chatContent.classList.add("chat-content", "chat-content-right", "row");
+      chatContent.innerHTML = val.innerHTML;
+
+      wrapCol.appendChild(chatContent);
+      wrapCol.appendChild(chatTimestamp);
+      wrapRow.appendChild(wrapCol);
+      user.appendChild(wrapRow);
+      container.appendChild(user);
+    }
+
+    function makeLogo(w){
+      var logoWrap = document.createElement("div");
+      logoWrap.className = "logo";
+      if(w){
+        logoWrap.setAttribute("style", "width:" + w + "; height: " + w + ";");
+      }
+      var leftEyebrow = document.createElement("div");
+      leftEyebrow.classList.add("left-eyebrow", "line");
+      var rightEyebrow = document.createElement("div");
+      rightEyebrow.classList.add("right-eyebrow", "line");
+      var leftEye = document.createElement("div");
+      leftEye. classList.add("left-eye", "circle");
+      var rightEye = document.createElement("div");
+      rightEye.classList.add("right-eye", "circle");
+      var leftCheek = document.createElement("div");
+      leftCheek.classList.add("left-cheek", "circle");
+      var rightCheek = document.createElement("div");
+      rightCheek.classList.add("right-cheek", "circle");
+      var beak = document.createElement("div");
+      beak.classList.add("beak", "circle");
+      var mouth = document.createElement("div");
+      mouth.className = "mouth";
+
+      beak.appendChild(mouth);
+      logoWrap.appendChild(leftEyebrow);
+      logoWrap.appendChild(rightEyebrow);
+      logoWrap.appendChild(leftEye);
+      logoWrap.appendChild(rightEye);
+      logoWrap.appendChild(leftCheek);
+      logoWrap.appendChild(rightCheek);
+      logoWrap.appendChild(beak);
+
+      return logoWrap;
+    }
+
+    function createSingleRow(){
+      var row = document.createElement("div");
+      row.className = "row";
+      var col = document.createElement("div");
+      col.className = "col";
+
+      row.appendChild(col);
+      return row;
+    }
+
+    function addDefaultMenu(){
+        var chatContent = document.createElement("div");
+        chatContent.classList.add("chat-content", "chat-content-left", "row");
+
+        var chatArray = [];
+        let i;
+        for(i = 0; i<4; i++){
+            let temp = document.createElement("div");
+            temp.className = "col-md-3";
+            temp.setAttribute("style", "padding: 0;");
+
+            if(i > 0){
+                var btn = document.createElement("button");
+                btn.setAttribute("type", "button");
+                btn.classList.add("btn", "btn-light");
+                temp.appendChild(btn);
+            }
+            chatArray.push(temp);
+        }
+
+        chatArray[0].innerHTML = "What do you want to know?";
+        chatArray[1].firstChild.innerHTML =  "Publications";
+        chatArray[1].firstChild.addEventListener("click", function(){
+            addUserChat(this);
+            addChatReply(addPublicationList());
+            addChatReply(addDefaultMenu());
+        });
+        chatArray[2].firstChild.innerHTML = "Projects";
+        chatArray[2].firstChild.addEventListener("click", function(){
+            addUserChat(this);
+            addChatReply(addProjectList());
+            addChatReply(addDefaultMenu());
+        });
+        chatArray[3].firstChild.innerHTML = "Contact";
+        chatArray[3].firstChild.addEventListener("click", function(){
+            addUserChat(this);
+            addChatReply(addContact());
+            addChatReply(addDefaultMenu());
+        });
+
+        chatArray.forEach((item, i) => {
+            chatContent.appendChild(item);
+        });
+
+        return chatContent;
+    }
+
+
+    function addProjectList(){
+        var chatContent = document.createElement("div");
+        chatContent.classList.add("chat-content", "chat-content-left");
+        var projListGroup = document.createElement("div");
+        projListGroup.className = "list-group";
+
+        var projListItems = [];
+        var i;
+
+        for(i = 0; i<9; i++){
+          let projItem = document.createElement("a");
+          projItem.classList.add("list-group-item", "list-group-item-action");
+          projListItems.push(projItem);
+        }
+
+        projListItems[0].innerHTML = "Vibrotactile flow on the head: Initial study";
+        projListItems[1].innerHTML = "Color representation by haptics";
+        projListItems[2].innerHTML = "Using vibration as a navigator in VR";
+        projListItems[3].innerHTML = "Haptic effect transmission system";
+        projListItems[4].innerHTML = "Using drone as a haptic device";
+        projListItems[5].innerHTML = "AR campus guide app";
+        projListItems[6].innerHTML = "A system for exchange contact via handshaking";
+        projListItems[7].innerHTML = "Campus Network configration simulation";
+        projListItems[8].innerHTML = "Music file player";
+
+        projListItems.forEach((item, i) => {
+            projListGroup.appendChild(item);
+        });
+
+        chatContent.appendChild(projListGroup);
+
+        return chatContent;
+
+    }
+
+    function addContact(){
+        var chatContent = document.createElement("div");
+        chatContent.classList.add("chat-content", "chat-content-left");
+
+        var cardWrap = document.createElement("div");
+        cardWrap.className = "card";
+        cardWrap.setAttribute("style", "width: 100%;");
+        var logo = makeLogo("30vw");
+        frownEmotion(logo);
+        var cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+        var cardText = document.createElement("p");
+        cardText.className = "card-text";
+        cardText.innerHTML = `If you have any question, feel free to ask!<br>(but not spam plz...)<br>mj.kim1102@khu.ac.kr`;
+        cardBody.appendChild(cardText);
+        cardWrap.appendChild(logo);
+        cardWrap.appendChild(cardBody);
+        chatContent.appendChild(cardWrap);
+
+        return chatContent;
+    }
+
+    function addTimestamp(alignment){
+        var time = new Date();
+        var chatTimestamp = document.createElement("div");
+        chatTimestamp.classList.add("chat-timestamp", alignment);
+        var timeStr;
+        timeStr = (time.getHours() > 12 ? time.getHours()-12 : time.getHours()) + ":" + time.getMinutes() + (time.getHours() > 12 ? " PM" : " AM");
+        chatTimestamp.innerHTML = timeStr;
+
+        return chatTimestamp;
+      }
+
+    function addPublicationList(){
+        var chatContent = document.createElement("div");
+        chatContent.classList.add("chat-content", "chat-content-left");
+
+        chatContent.innerHTML = `<span>1. Muhammad Abdullah, <strong>Minji Kim</strong>, Waseem Hassan, Yoshihiro Kuroda and Seokhee Jeon, ”HapticDrone: An Encountered-Type Kinesthetic Haptic Interface with Controllable Force Feedback: Initial Example for 1D Haptic Feedback.” Adjunct Publication of the 30th Annual ACM Symposium on User Interface Software and Technology. ACM, 2017.</span><br><br>
+        						<span>2. <strong>Minji Kim</strong>, Hwangil Kim, Hyenhee Jung, Seokhee Jeon, ”Colour to Haptics: Color Representation by Vibration”, Journal of Advanced Technology Research, Vol. 2, No. 1, June. 2017.</span><br><br>
+        						<span>3. Muhammad Abdullah, <strong>Minji Kim</strong>, Waseem Hassan, Yoshihiro Kuroda and Seokhee Jeon, ”HapticDrone:An encountered-type kinesthetic haptic interface with controllable force feedback: Example of stiffness and weight rendering”, In Pro-ceedings of Haptics Symposium, 2018.</span><br><br>
+        						<span>4. <strong>Minji Kim</strong>, Seokhee Jeon, ”Directional Information Perception on Head - Using Vibrotactile Phantom Sensation: Initial Study”, Korean Institute of Information Scientists and Engineers, Korea Computer Congress(KCC), 2018.</span><br><br>
+        						<span>5. <strong>Minji Kim</strong>, Arsen Abdulali and Seckhee Jeon, ”Vibrotactile Flow Perception on Backside of the Head: InitialStudy”, IEEE Games, Entertainment and Media Conference(GEM), 2018.</span>`;
+
+        return chatContent;
+    }
+
+    function addChatReply(content){
+      var chatSet = document.createElement("div");
+      chatSet.classList.add("row", "chat-set");
+
+      var logoArea = document.createElement("div");
+      logoArea.classList.add("col-3");
+
+      logoArea.appendChild(makeLogo());
+      chatSet.appendChild(logoArea);
+
+      var chatArea = document.createElement("div");
+      chatArea.classList.add("col-9");
+      var userNameRow = createSingleRow();
+      var userName = document.createElement("p");
+      userName.classList.add("brand-name");
+      userName.innerHTML = "Merrill Jade Kim";
+
+      userNameRow.firstChild.appendChild(userName);
+
+      var chatContentRow = createSingleRow();
+
+      var chatTimestamp = addTimestamp("left");
+
+      chatContentRow.firstChild.appendChild(content);
+      chatContentRow.firstChild.appendChild(chatTimestamp);
+
+      chatArea.appendChild(userNameRow);
+      chatArea.appendChild(chatContentRow);
+
+      chatSet.appendChild(chatArea);
+
+      var container = document.querySelector(".chat-container");
+      container.appendChild(chatSet);
+
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+body {
+padding: 0;
+margin: 0;
+}
+
+.chat-container {
+width: 95vw;
+min-height: 95vh;
+background-color: azure;
+display: flex;
+flex-direction: column;
+padding: 0.5rem;
+padding-right: 3vw;
+margin: auto;
+}
+
+.logo {
+width: 15vw;
+height: 15vw;
+background-color: #2d3157;
+border-radius: 10%;
+margin: auto;
+}
+
+.circle {
+background-color: azure;
+height: 4%;
+width: 4%;
+border-radius: 50%;
+}
+
+.line {
+background-color: azure;
+height: 1%;
+width: 5%;
+border-radius: 30%;
+}
+
+.left-eye.circle {
+top: 35%;
+left: 20%;
+position: relative;
+}
+
+.left-eye.two-lines{
+top: 31%;
+left: 20%;
+position: relative;
+}
+
+
+.right-eye.circle {
+top: 31%;
+left: 75%;
+position: relative;
+}
+
+.right-eye.two-lines{
+top: 31.5%;
+left: 75%;
+position: relative;
+}
+
+.two-lines{
+background-color: azure;
+height: 1%;
+width: 4%;
+border-radius: 30%;
+transform: rotate(15deg);
+}
+.two-lines::after{
+content: ' ';
+background-color: azure;
+display: block;
+height: 100%;
+width: 100%;
+top: 150%;
+left: 15%;
+border-radius: 30%;
+position: relative;
+transform: rotate(-30deg);
+}
+
+.two-lines.left{
+transform: rotate(15deg);
+top: 32%;
+}
+
+.two-lines.right{
+transform: rotate(195deg);
+top: 33%;
+}
+
+.beak {
+top: 23%;
+left: 23.5%;
+width: 53%;
+height: 20%;
+border-radius: 250%;
+position: relative;
+background-color: #ffda4d;
+}
+
+.mouth{
+border-radius: 30% 30% 120% 120%;
+position: relative;
+width: 10%;
+height: 20%;
+top: 24%;
+left: 44%;
+background-color: #EF5350;
+}
+
+.left-eyebrow{
+top: 30%;
+left: 17%;
+position: relative;
+transform: rotate(-20deg);
+}
+
+.right-eyebrow{
+top: 29%;
+left: 77%;
+position: relative;
+transform: rotate(20deg);
+}
+
+.left-cheek{
+top: 33%;
+left: 13%;
+width: 9%;
+height: 3%;
+border-radius: 250%;
+position: relative;
+background-color: #EF5350;
+}
+
+.right-cheek{
+top: 30%;
+left: 78%;
+width: 9%;
+height: 3%;
+border-radius: 250%;
+position: relative;
+background-color: #EF5350;
+}
+
+.brand-name{
+font-size: 5vw;
+font-stretch: condensed;
+font-family: Impact, Charcoal, sans-serif;
+color: #2d3157;
+position: relative;
+margin: 0;
+}
