@@ -19,14 +19,14 @@
   <style>
   </style>
 </head>
-<body onload = "updateDate();">
+<body onload = "init();">
   <div class="chat-container">
     <div class = "row justify-content-center">
       <div class = "col" style = "padding: 1rem;">
         <div id = "date"></div>
       </div>
     </div>
-      <div class = "row chat-set">
+<!--      <div class = "row chat-set">
         <div class = "col-3">
           <div class = "logo">
             <div class = "left-eyebrow line"></div>
@@ -69,7 +69,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
     </div>
 
 <!--    <button type = "button" onmouseover = "frownEmotion();" onmouseout="normalEmotion();">test</button> -->
@@ -80,6 +80,17 @@
   <script src = "./js/bootstrap.js"></script>
   <script src = "./js/logo.js"></script>
   <script>
+    function init(){
+        updateDate();
+
+        var chatContent = document.createElement("div");
+        chatContent.classList.add("chat-content", "chat-content-left", "row");
+
+        chatContent.innerHTML = "Hi! Good to meet you!";
+
+        addChatReply(chatContent);
+        addChatReply(addDefaultMenu());
+    }
     function updateDate(){
         console.log("update function called");
         var today = new Date();
