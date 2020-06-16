@@ -89,7 +89,6 @@
         chatContent.innerHTML = "Hi! Good to meet you!";
 
         addChatReply(chatContent);
-        addChatReply(addDefaultMenu());
     }
     function updateDate(){
         console.log("update function called");
@@ -192,19 +191,16 @@
         chatArray[1].firstChild.addEventListener("click", function(){
             addUserChat(this);
             addChatReply(addPublicationList());
-            addChatReply(addDefaultMenu());
         });
         chatArray[2].firstChild.innerHTML = "Projects";
         chatArray[2].firstChild.addEventListener("click", function(){
             addUserChat(this);
             addChatReply(addProjectList());
-            addChatReply(addDefaultMenu());
         });
         chatArray[3].firstChild.innerHTML = "Contact";
         chatArray[3].firstChild.addEventListener("click", function(){
             addUserChat(this);
             addChatReply(addContact());
-            addChatReply(addDefaultMenu());
         });
 
         chatArray.forEach((item, i) => {
@@ -317,13 +313,17 @@
 
       var chatContentRow = createSingleRow();
 
-      var chatTimestamp = addTimestamp("left");
-
       chatContentRow.firstChild.appendChild(content);
-      chatContentRow.firstChild.appendChild(chatTimestamp);
+      chatContentRow.firstChild.appendChild(addTimestamp("left"));
+
+      var chatMenuRow = createSingleRow();
+
+      chatMenuRow.firstChild.appendChild(addDefaultMenu());
+      chatMenuRow.firstChild.appendChild(addTimestamp("left"));
 
       chatArea.appendChild(userNameRow);
       chatArea.appendChild(chatContentRow);
+      chatArea.appendChild(chatMenuRow);
 
       chatSet.appendChild(chatArea);
 
@@ -331,7 +331,6 @@
       container.appendChild(chatSet);
 
       scrollToBottom();
-
     }
   </script>
 </body>
