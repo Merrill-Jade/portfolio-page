@@ -24,7 +24,7 @@ overflow: hidden;
   font-size: 1.1rem;
   border-radius: 5rem;
   top: 1rem;
-  width: 10rem;
+  width: 13rem;
   padding: 0.5rem;
   display: block;
   margin: auto;
@@ -95,8 +95,4 @@ overflow: hidden;
 }
 .chat-set{
   padding-bottom: 1rem;
-}
-
-.row .col{
-  display: none;
 }
