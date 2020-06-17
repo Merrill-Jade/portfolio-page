@@ -13,14 +13,58 @@
   <!-- bootstrap core css -->
   <link href="./css/bootstrap.css" rel="stylesheet">
 
+  <!-- font awesome kit code -->
+  <script src="https://kit.fontawesome.com/2d3c1e0b6e.js" crossorigin="anonymous"></script>
+
   <link rel = "stylesheet" href = "./css/logo.css">
   <link rel = "stylesheet" href = "./css/m-chat.css">
 
   <style>
+  .header-wrapper {
+    position: fixed;
+    padding: 1rem;
+    margin: 0;
+    top: 0;
+    width: 100%;
+    background-color: azure;
+    z-index: 1;
+  }
+  .header {
+    margin: 0;
+    padding-left: 1rem;
+  }
+
+  .footer-wrapper{
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: azure;
+    z-index: 1;
+  }
+  .footer{
+    margin: 0;
+    padding: 0;
+    align-items: flex-end;
+  }
+  .input-group.mb-3{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
   </style>
 </head>
-<body onload = "init();">
-  <div class="chat-container">
+<body onload="init();">
+  <div class = "header-wrapper">
+    <header class = "header">
+      <h1 class = "head-title">
+        <i class="fas fa-arrow-left"></i>
+        Merrill Jade Kim
+      </h1>
+    </header>
+  </div>
+  <main class="chat-container">
     <div class = "row justify-content-center">
       <div class = "col" style = "padding: 1rem;">
         <div id = "date"></div>
@@ -70,14 +114,55 @@
             </div>
           </div>
         </div>-->
-    </div>
 
-<!--    <button type = "button" onmouseover = "frownEmotion();" onmouseout="normalEmotion();">test</button> -->
+    </main>
+
+    <div class = "footer-wrapper">
+      <footer class = "footer">
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+          </div>
+        </div>
+      </footer>
+    </div>
+<!--
+    <button type = "button" class = "btn" data-toggle="modal" data-target="#projInfoModal">test</button>
+
+    <!-- Modal
+  <div class="modal fade" id="projInfoModal" tabindex="-1" role="dialog" aria-labelledby="projInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projInfoModalLabel">Modal testing</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          efore getting started with Bootstrap’s modal component, be sure to read the following as our menu options have recently changed.
+
+          Modals are built with HTML, CSS, and JavaScript. They’re positioned over everything else in the document and remove scroll from the body so that modal content scrolls instead.
+          Clicking on the modal “backdrop” will automatically close the modal.
+          Bootstrap only supports one modal window at a time. Nested modals aren’t supported as we believe them to be poor user experiences.
+          Modals use position: fixed, which can sometimes be a bit particular about its rendering. Whenever possible, place your modal HTML in a top-level position to avoid potential interference from other elements. You’ll likely run into issues when nesting a .modal within another fixed element.
+          Once again, due to position: fixed, there are some caveats with using modals on mobile devices. See our browser support docs for details.
+          Due to how HTML5 defines its semantics, the autofocus HTML attribute has no effect in Bootstrap modals. To achieve the same effect, use some custom JavaScript:
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
+
+-->
   <!-- bootstrap scripts--->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
   <script src = "./js/bootstrap.js"></script>
+
   <script src = "./js/logo.js"></script>
   <script src = "./js/m-chat.js"></script>
 </body>

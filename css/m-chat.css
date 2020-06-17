@@ -1,3 +1,23 @@
+body {
+padding: 0;
+margin: 0;
+font-stretch: condensed;
+font-family: 'nanumgothicregular';
+}
+
+.chat-container {
+width: 100%;
+min-height: calc(100vh - 9rem);
+background-color: azure;
+display: flex;
+flex-direction: column;
+padding: 1rem;
+margin: auto;
+margin-top: 5.5rem;
+margin-bottom: 2rem;
+overflow: hidden;
+}
+
 #date{
   background-color: rgba(128, 128, 128, 0.5);
   text-align: center;
@@ -9,6 +29,23 @@
   display: block;
   margin: auto;
 }
+
+.animate-from-bottom {
+  position: relative;
+  -webkit-animation-name: animationfrombottom;
+  -webkit-animation-duration: 4s;
+  animation-name: animationfrombottom;
+  animation-duration: 4s;
+}
+@-webkit-keyframes animationfrombottom{
+  from { bottom:-40px; opacity:0; }
+  to { bottom: 0px; opacity:1; }
+}
+@@keyframes animationfrombottom {
+  from { bottom:-40px; opacity:0; }
+  to { bottom: 0px; opacity:1; }
+}
+
 .chat-content{
   background-color: #badccc;
   margin-top: 3%;
@@ -58,4 +95,8 @@
 }
 .chat-set{
   padding-bottom: 1rem;
+}
+
+.row .col{
+  display: none;
 }

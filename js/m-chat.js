@@ -8,6 +8,11 @@ function init(){
 
     addChatReply(chatContent);
 }
+
+function appearContent(val){
+  val.style.display = "inline-block";
+}
+
 function updateDate(){
     console.log("update function called");
     var today = new Date();
@@ -43,7 +48,8 @@ function makeLogo(w){
   var logoWrap = document.createElement("div");
   logoWrap.className = "logo";
   if(w){
-    logoWrap.setAttribute("style", "width:" + w + "; height: " + w + ";");
+    logoWrap.style.width = w;
+    logoWrap.style.height = w;
   }
   var leftEyebrow = document.createElement("div");
   leftEyebrow.classList.add("left-eyebrow", "line");
@@ -80,6 +86,8 @@ function createSingleRow(){
   var col = document.createElement("div");
   col.className = "col";
 
+  appearContent(col);
+
   row.appendChild(col);
   return row;
 }
@@ -93,7 +101,7 @@ function addDefaultMenu(){
     for(i = 0; i<4; i++){
         let temp = document.createElement("div");
         temp.className = "col-md-3";
-        temp.setAttribute("style", "padding: 0;");
+        temp.style.padding = "0";
 
         if(i > 0){
             var btn = document.createElement("button");
@@ -170,8 +178,7 @@ function addContact(){
 
     var cardWrap = document.createElement("div");
     cardWrap.className = "card";
-    cardWrap.setAttribute("style", "width: 100%;");
-    var logo = makeLogo("30vw");
+    var logo = makeLogo("50vw");
     frownEmotion(logo);
     var cardBody = document.createElement("div");
     cardBody.className = "card-body";
@@ -211,6 +218,7 @@ function addPublicationList(){
 }
 
 function addChatReply(content){
+  setTimeout(() => { console.log("timeout"); }, 500);
   var chatSet = document.createElement("div");
   chatSet.classList.add("row", "chat-set");
 
@@ -249,4 +257,7 @@ function addChatReply(content){
   container.appendChild(chatSet);
 
   scrollToBottom();
+}
+
+function createModal(){
 }

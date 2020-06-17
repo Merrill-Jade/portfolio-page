@@ -1,18 +1,3 @@
-body {
-padding: 0;
-margin: 0;
-}
-
-.chat-container {
-width: 95vw;
-min-height: 95vh;
-background-color: azure;
-display: flex;
-flex-direction: column;
-padding: 0.5rem;
-padding-right: 3vw;
-margin: auto;
-}
 
 .logo {
 width: 10vw;
@@ -146,9 +131,8 @@ background-color: #EF5350;
 }
 
 .brand-name{
-font-size: 5vw;
-font-stretch: condensed;
-font-family: Impact, Charcoal, sans-serif;
+font-size: 1.5rem;
+font-weight: bold;
 color: #2d3157;
 position: relative;
 margin: 0;
