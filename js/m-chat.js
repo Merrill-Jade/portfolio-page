@@ -1,3 +1,7 @@
+function resizeHandler(){
+  console.log("resize event occured; now window size: " + screen.width);
+}
+
 function init(){
     updateDate();
 
@@ -7,6 +11,7 @@ function init(){
     chatContent.innerHTML = "Hi! Good to meet you!";
 
     addChatReply(chatContent);
+//    document.querySelector(".chat-container").appendChild(addDefaultMenu());
 }
 
 function appearContent(val){
@@ -18,7 +23,7 @@ function updateDate(){
     var today = new Date();
     var dateStr = today.toDateString().split(" ");
 
-    document.getElementById("date").innerHTML = dateStr[0] + ", " + dateStr[1] + " " + dateStr[2] + ", " + dateStr[3];
+    document.getElementById("date").innerHTML = `${dateStr[0]}, ${dateStr[1]} ${dateStr[2]}, ${dateStr[3]}`;
 }
 
 function scrollToBottom(){
@@ -94,7 +99,7 @@ function createSingleRow(){
 
 function addDefaultMenu(){
     var chatContent = document.createElement("div");
-    chatContent.classList.add("chat-content", "chat-content-left", "row");
+    chatContent.classList.add("chat-content", "chat-content-left", "row", "menu");
 
     var chatArray = [];
     let i;
@@ -149,18 +154,23 @@ function addProjectList(){
     for(i = 0; i<9; i++){
       let projItem = document.createElement("a");
       projItem.classList.add("list-group-item", "list-group-item-action");
+      projItem.setAttribute("data-toggle", "modal");
+      projItem.setAttribute("data-target", "#projInfoModal");
+
+      let projItemTitle = document.createElement("span");
+      projItem.appendChild(projItemTitle);
       projListItems.push(projItem);
     }
 
-    projListItems[0].innerHTML = "Vibrotactile flow on the head: Initial study";
-    projListItems[1].innerHTML = "Color representation by haptics";
-    projListItems[2].innerHTML = "Using vibration as a navigator in VR";
-    projListItems[3].innerHTML = "Haptic effect transmission system";
-    projListItems[4].innerHTML = "Using drone as a haptic device";
-    projListItems[5].innerHTML = "AR campus guide app";
-    projListItems[6].innerHTML = "A system for exchange contact via handshaking";
-    projListItems[7].innerHTML = "Campus Network configration simulation";
-    projListItems[8].innerHTML = "Music file player";
+    projListItems[0].firstChild.innerHTML = "Vibrotactile flow on the head: Initial study";
+    projListItems[1].firstChild.innerHTML = "Color representation by haptics";
+    projListItems[2].firstChild.innerHTML = "Using vibration as a navigator in VR";
+    projListItems[3].firstChild.innerHTML = "Haptic effect transmission system";
+    projListItems[4].firstChild.innerHTML = "Using drone as a haptic device";
+    projListItems[5].firstChild.innerHTML = "AR campus guide app";
+    projListItems[6].firstChild.innerHTML = "A system for exchange contact via handshaking";
+    projListItems[7].firstChild.innerHTML = "Campus Network configration simulation";
+    projListItems[8].firstChild.innerHTML = "Music file player";
 
     projListItems.forEach((item, i) => {
         projListGroup.appendChild(item);

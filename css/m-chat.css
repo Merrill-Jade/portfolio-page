@@ -1,21 +1,71 @@
 body {
 padding: 0;
 margin: 0;
+width: 100vw;
+height: 100vh;
 font-stretch: condensed;
 font-family: 'nanumgothicregular';
+background-color: azure;
+}
+
+a:hover{
+  text-decoration: none;
+  background-color: inherit;
+}
+a:link{
+  text-decoration: none;
+}
+
+
+.header-wrapper {
+  position: fixed;
+  padding: 1rem;
+  margin: 0;
+  top: 0;
+  width: 100%;
+  background-color: inherit;
+  z-index: 1;
+}
+.header {
+  margin: 0;
+  padding-left: 1rem;
+  width: inherit;
+}
+.head-title i{
+  color: inherit;
+}
+
+.footer-wrapper{
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: inherit;
+  z-index: 1;
+  display: block;
+}
+.footer{
+  margin: 0;
+  padding: 0;
+  align-items: flex-end;
+}
+.input-group.mb-3{
+  padding: 0;
+  margin: 0;
+  height: 100%;
 }
 
 .chat-container {
 width: 100%;
-min-height: calc(100vh - 9rem);
-background-color: azure;
+background-color: inherit;
 display: flex;
 flex-direction: column;
 padding: 1rem;
 margin: auto;
 margin-top: 5.5rem;
 margin-bottom: 2rem;
-overflow: hidden;
+/*overflow: hidden;*/
 }
 
 #date{
@@ -95,4 +145,8 @@ overflow: hidden;
 }
 .chat-set{
   padding-bottom: 1rem;
+}
+
+.pcver-container, .menu-wrapper, .publication-wrapper, .project-wrapper{
+  display: none;
 }
