@@ -156,6 +156,7 @@ function addProjectList(){
       projItem.classList.add("list-group-item", "list-group-item-action");
       projItem.setAttribute("data-toggle", "modal");
       projItem.setAttribute("data-target", "#projInfoModal");
+      projItem.addEventListener("click", function(){setModalText(this)});
 
       let projItemTitle = document.createElement("span");
       projItem.appendChild(projItemTitle);
