@@ -18,8 +18,6 @@ function init(){
 
       addChatReply(chatContent);
 
-      spreadStar();
-      createLantern();
 }
 
 function updateDate(){
@@ -398,50 +396,5 @@ function setModalText(caller){
       modalTextarea.innerHTML = str.selfIntroWeb;
   }else{
       modalTextarea.innerHTML = str.vrMazeNavigator;
-  }
-}
-
-function createLantern(){
-  var lanternContainer = document.querySelector(".lantern-container");
-  var i;
-  for(i = 0; i<(Math.floor(screen.width/160)*4); i++){
-    let lantern = document.createElement("div");
-    let size = Math.floor(Math.random()*10)+1;
-    lantern.classList.add(`lanternX${size}`, "lantern");
-    lantern.style.left = `${Math.floor(Math.random()*screen.width)}px`;
-    let lanternImg = document.createElement("img");
-    lanternImg.setAttribute("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3522775/LanternsLarge.png");
-    lanternImg.style.animation = `lanternY ${Math.floor(Math.random()*3)+3}s linear ${Math.floor(Math.random()*13)+12}s infinite`;
-    lanternImg.style.width = `${Math.floor(Math.random()*37)+36}px`;
-    lanternImg.style.zIndex = `${Math.floor(Math.random()*-10)-10}px`;
-
-    lantern.appendChild(lanternImg);
-    lanternContainer.appendChild(lantern);
-  }
-}
-function spreadStar(){
-  var starContainer = document.querySelector(".stars-container");
-  var i;
-  for(i = 0; i<(Math.floor(screen.width/160)*25); i++){
-    let star = document.createElement("span");
-    star.classList.add("star");
-    switch(i%3){
-      case 0:
-        star.classList.add("star-small");
-        star.style.top = `${Math.floor(Math.random()*(screen.height/4))+(screen.height*0.21)}px`;
-        break;
-      case 1:
-        star.classList.add("star-middle");
-        star.style.top = `${Math.floor(Math.random()*(screen.height/2))+(screen.height*0.14)}px`;
-        break;
-      case 2:
-        star.classList.add("star-large");
-        star.style.top = `${Math.floor(Math.random()*(screen.height/2))+(screen.height*0.06)}px`;
-    }
-
-    star.style.left = `${Math.floor(Math.random()*screen.width)}px`;
-    console.log(`${star.style.top}, ${star.style.left}`);
-
-    starContainer.appendChild(star);
   }
 }

@@ -1,8 +1,5 @@
 @media screen and (min-width: 576px){
-  @keyframes darkerBackground {
-    from { background-color: azure; }
-    to { background-color: #2d3157; }
-  }
+
   @keyframes neonsignTwinkleYellow {
     0% { text-shadow: 0px 0px 20px #ffda4d; color: #fffbed; }
     2% { text-shadow: 0px 0px 3px #ffda4d; color: #ffe582; }
@@ -24,14 +21,13 @@
     100% { box-shadow: 0px 0px 20px #ffda4d; border-color: #fffbed; }
   }
   @keyframes lightOnAndOff {
-    0% { box-shadow: 0px 0px 20px azure; }
-    50% { box-shadow: 0px 0px 3px azure; }
-    100% { box-shadow: 0px 0px 20px azure; }
+    0% { box-shadow: 0px 0px 20px #ffc357; }
+    50% { box-shadow: 0px 0px 3px #ffc357; }
+    100% { box-shadow: 0px 0px 20px #ffc357; }
   }
   body{
-    background-color: #2d3157;
-    animation-name: darkerBackground;
-    animation-duration: 2s;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/eu-night-city.jpg");
+    background-size: 100vw 100vh;
     overflow: hidden;
   }
 
@@ -118,10 +114,10 @@
   .publ-item-wrapper{
     margin-bottom: 2%;
     min-height: 8%;
-    border: 0.5rem solid azure;
+    border: 0.5rem solid #ffc357;
     border-radius: 1rem;
     background-color: azure;
-    box-shadow: 0px 0px 20px azure;
+    box-shadow: 0px 0px 20px #ffc357;
     animation-name: lightOnAndOff;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -143,13 +139,16 @@
   }
 
   .proj-item-wrapper{
-    border: 0.5rem solid #34c1bb;
+    border: 0.5rem solid #ffc357;
     border-radius: 1rem;
     height: 11vh;
-    background-color: #34c1bb;
-    box-shadow: 0px 0px 20px #34c1bb;
+    background-color: azure;
+    box-shadow: 0px 0px 20px #ffc357;
     margin: auto;
     display: block;
+    animation-name: lightOnAndOff;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
   }
 
   .proj-item-title{
