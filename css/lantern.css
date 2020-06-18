@@ -1,0 +1,186 @@
+.bg-wrapper{
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #202022 0%, #084f93 80%, #d88144 100%);
+  z-index: -1000;
+}
+.stars-container{
+  z-index: -30;
+  position: relative;
+  width: inherit;
+  height: 56%;
+  top: 0.06%;
+  left: 0;
+}
+.star {
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(1.1);
+}
+.star-small{
+  width: 1px;
+  height: 1px;
+}
+.star-middle{
+  width: 2px;
+  height: 2px;
+}
+.star-large{
+  width: 3px;
+  height: 3px;
+}
+
+.lantern-container{
+  z-index: -20;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+}
+
+@keyframes lanternY {
+  0% {
+    transform: translateY(0);
+ }
+  100% {
+    transform: translateY(-110vh);
+ }
+}
+
+.lantern{
+  position: absolute;
+  bottom: -80px;
+  transform: translateX(0);
+}
+.lantern img{
+  display: inline-block;
+  transform: translateY(0);
+}
+.lanternX1 {
+  animation-name: lanternX1;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes lanternX1 {
+  50% {
+    transform: translateX(21px);
+ }
+}
+
+.lanternX2 {
+  animation-name: lanternX2;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes lanternX2 {
+  50% {
+    transform: translateX(38px);
+ }
+}
+
+.lanternX3 {
+  animation-name: lanternX3;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes lanternX3 {
+  50% {
+    transform: translateX(7px);
+ }
+}
+
+.lanternX4 {
+  animation-name: lanternX4;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes lanternX4 {
+  50% {
+    transform: translateX(50px);
+ }
+}
+
+.lanternX5 {
+  animation-name: lanternX5;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes lanternX5 {
+  50% {
+    transform: translateX(38px);
+ }
+}
+
+.lanternX6 {
+  animation-name: lanternX6;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes lanternX6 {
+  50% {
+    transform: translateX(35px);
+ }
+}
+
+.lanternX7 {
+  animation-name: lanternX7;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes lanternX7 {
+  50% {
+    transform: translateX(46px);
+ }
+}
+
+.lanternX8 {
+  animation-name: lanternX8;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes lanternX8 {
+  50% {
+    transform: translateX(72px);
+ }
+}
+
+.lanternX9 {
+  animation-name: lanternX9;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes lanternX9 {
+  50% {
+    transform: translateX(27px);
+ }
+}
+
+.lanternX10 {
+  animation-name: lanternX10;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes lanternX10 {
+  50% {
+    transform: translateX(29px);
+ }
+}
