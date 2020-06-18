@@ -1,11 +1,12 @@
-.bg-wrapper{
+@media screen and (min-width: 576px){
+  .bg-wrapper{
   padding: 0;
   margin: 0;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   position: absolute;
-  top: 0;
+  top: -25vh;
   left: 0;
   background: linear-gradient(to bottom, #202022 0%, #084f93 80%, #d88144 100%);
   z-index: -1000;
@@ -183,4 +184,5 @@
   50% {
     transform: translateX(29px);
  }
+}
 }

@@ -1,9 +1,14 @@
 function resizeHandler(){
   console.log("resize event occured; now window size: " + screen.width);
+  var pcContainer = document.querySelector(".pcver-container");
+  if(screen.width <= 440){
+    pcContainer.style.visibility = "hidden";
+  }else{
+    pcContainer.style.visibility = "visible";
+  }
 }
 
 function init(){
-    if(screen.size <= 440){
       updateDate();
 
       var chatContent = document.createElement("div");
@@ -12,14 +17,9 @@ function init(){
       chatContent.innerHTML = "Hi! Good to meet you!";
 
       addChatReply(chatContent);
-    }else{
+
       spreadStar();
       createLantern();
-    }
-}
-
-function appearContent(val){
-  val.style.display = "inline-block";
 }
 
 function updateDate(){
@@ -94,8 +94,6 @@ function createSingleRow(){
   row.className = "row";
   var col = document.createElement("div");
   col.className = "col";
-
-  appearContent(col);
 
   row.appendChild(col);
   return row;
@@ -415,7 +413,7 @@ function createLantern(){
     lanternImg.setAttribute("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3522775/LanternsLarge.png");
     lanternImg.style.animation = `lanternY ${Math.floor(Math.random()*3)+3}s linear ${Math.floor(Math.random()*13)+12}s infinite`;
     lanternImg.style.width = `${Math.floor(Math.random()*37)+36}px`;
-    lanternImg.style.zIndex = `${Math.floor(Math.random()*10)+10}px`;
+    lanternImg.style.zIndex = `${Math.floor(Math.random()*-10)-10}px`;
 
     lantern.appendChild(lanternImg);
     lanternContainer.appendChild(lantern);
